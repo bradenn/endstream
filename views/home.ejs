@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<%- include("partials/header.ejs"); %>
+
+<body>
+<%- include("partials/nav.ejs"); %>
+<div class="container" style="margin-top:1em;">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card" style="margin-bottom: 16px;">
+                <div class="d-inline-flex">
+                    <div class="p-2" style="width: 100%">
+                        <input type="text" class="form-control disabled" onfocus="redirectToCreate();" placeholder="Write something...">
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-outline-dark"><i class="fas fa-link"></i></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-outline-dark"><i class="far fa-images"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="card drawer" style="margin-bottom: 1em;">
+                <h5>~ <%= user.username %></h5>
+                <hr style="margin-top: 0.5em;">
+                <ul class="list-group">
+                    <li class="list-group-item active"><i class="fas fa-stream drawer-icon" aria-hidden="true"></i><a
+                                href="#" class="drawer-link">Feed</a></li>
+                    <li class="list-group-item"><i class="fas fa-video drawer-icon" aria-hidden="true"></i><a href="#"
+                                                                                                              class="drawer-link">Content</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-balance-scale-left drawer-icon" aria-hidden="true"></i><a
+                                href="#" class="drawer-link">Discussion</a></li>
+                    <li class="list-group-item"><i class="fas fa-comment drawer-icon" aria-hidden="true"></i><a href="#"
+                                                                                                                class="drawer-link">Messenger</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<%- include("partials/footer.ejs"); %>
+
+<script>
+    function toggleView() {
+        $(".fol").toggleClass("badge-magic-secondary");
+        $(".rec").toggleClass("badge-magic");
+    }
+</script>
+
+<script>
+    function redirectToCreate() {
+        window.location.href = "/create";
+    }
+</script>
+
+</html>
