@@ -11,12 +11,6 @@ router.get('/', function(req, res) {
   });
 });
 
-function getRand(t) {
-  var c = t.length;
-  var z = Math.floor(Math.random() * c);
-  return t[z];
-}
-
 router.post('/', function(req, res, next) {
   if (req.body.password !== req.body.confPassword) {
     var err = new Error('Passwords do not match.');
@@ -39,7 +33,7 @@ router.post('/', function(req, res, next) {
         picture: "https://bn-media-aws.s3.us-west-2.amazonaws.com/1564603161391",
         account: "user",
         date: new Date()
-      }
+      };
       User.create(userData, function(error, user) {
         if (error) {
           return res.render("login", {
@@ -83,14 +77,6 @@ router.post('/', function(req, res, next) {
               });
             }
           });
-      } else {
-        if (user.account == 'banned') {
-          return res.redirect('/banned');
-        } else {
-          req.session.userId = user._id;
-          return res.redirect('/');
-        }
-
       }
     });
   } else {

@@ -14,11 +14,4 @@ utils.getRouteWithUser('/', router, (req, res, user) => {
     });
 });
 
-router.get("/get/:id", (req, res) => {
-    User.findOne({username: req.params.id}, (err, usr) => {
-        res.send(usr.interests);
-    });
-});
-
-
 module.exports = router;
