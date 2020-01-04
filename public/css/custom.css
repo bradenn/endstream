@@ -152,7 +152,7 @@ body {
     margin-top: 5px;
     border: none;
     box-shadow: var(--normal-shadow);
-    border-radius: 1em;
+    border-radius: 0.25em;
 }
 
 /* Streaming Windows*/
@@ -280,6 +280,16 @@ body {
     width: 2em;
 }
 
+.form-element {
+    display: inline-block;
+    width: 100%;
+}
+
+.form-group-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .displayname {
     font-weight: initial;
     margin: 0 !important;
@@ -297,8 +307,8 @@ body {
 .card {
     border: none;
     box-shadow: var(--normal-shadow);
-    border-radius: 2px;
-    background-color: var(--card-bg);
+    border-radius: 0.25em;
+    background-color: #fff;
 }
 
 .card h5 {
