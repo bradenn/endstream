@@ -10,11 +10,17 @@ let UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    displayname: String,
+    display_name: String,
     email: {
         type: String,
         unique: true,
         required: true
+    },
+    bio: String,
+    account_type: {
+        type: Number,
+        enum: [1, 2, 3, 4, 5, 6],
+        default: 1
     },
     password: String,
     picture: String,
@@ -41,7 +47,7 @@ UserSchema.statics.authenticate = function(username, password, callback) {
                 callback();
             }
         });
-}
+};
 
 // Hash password on password change
 UserSchema.pre('save', function(next) {

@@ -1,8 +1,7 @@
 const config = require("../config.json");
 let mongoose = require('mongoose');
-let autopopulate = require('mongoose-autopopulate');
 
-// Define schema for `user` database collection
+// Define schema for `stream` database collection
 let StreamSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -16,12 +15,17 @@ let StreamSchema = new mongoose.Schema({
     },
     desc: String,
     stream_key: String,
+    watch_key: String,
     date: String
 });
 
-// Load plugin to automatically populate nested queries
-StreamSchema.plugin(autopopulate);
-
+StreamSchema.plugin(require('mongoose-autopopulate'));
+StreamSchema.pre('save', function(next) {
+    var stream = this;
+    if (!stream.isModified('watch_key')) return next();
+    stream.watch_key = Math.random().toString(36).replace('0.', '') ;
+    next();
+});
 let Stream = mongoose.model('Stream', StreamSchema);
 
-module.exports = User;
+module.exports = Stream;

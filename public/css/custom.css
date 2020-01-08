@@ -45,9 +45,34 @@ body {
     line-height: 2em;
 }
 
+/* Breadcrumb */
+
+.breadcrumb {
+    background-color: var(--card-bg);
+    box-shadow: var(--normal-shadow);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.breadcrumb-item a {
+    color: #000 !important;
+}
+
+/* Links */
+
+a.no-bs {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.no-bs:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Navbar */
 
-.nav-button{
+.nav-button {
     border: 1px solid #ccc;
     border-radius: .25rem;
     padding: 4px 8px;
@@ -155,7 +180,7 @@ body {
     border-radius: 0.25em;
 }
 
-/* Streaming Windows*/
+/* Streaming Windows */
 
 .video-stream {
     min-height: 10em;
@@ -257,7 +282,34 @@ body {
     margin-bottom: 0;
 }
 
+/* Thumbnail */
+
+.stream-preview {
+    text-decoration: none;
+    max-width: 360px;
+    width: 100%;
+    margin: 1em 1em 0.25em;
+}
+
+.stream-thumbnail {
+    max-width: 360px;
+    width: 100%;
+    height: 200px;
+    box-shadow: var(--normal-shadow);
+}
+
 /* Typography */
+
+h5 {
+    font-size: 1.17rem;
+    font-weight: 500;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
 
 .chat-displayname {
     font-weight: 500;
@@ -270,6 +322,12 @@ body {
     color: rgba(0, 0, 0, 0.60);
 }
 
+label {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /* Cards */
 
 .img-md {
@@ -278,6 +336,14 @@ body {
     border-radius: 100%;
     height: 2em;
     width: 2em;
+}
+
+.img-lg {
+    background-size: contain;
+    background-position: center;
+    border-radius: 100%;
+    height: 3em;
+    width: 3em;
 }
 
 .form-element {
@@ -308,6 +374,7 @@ body {
     border: none;
     box-shadow: var(--normal-shadow);
     border-radius: 0.25em;
+    font-weight: 400;
     background-color: #fff;
 }
 

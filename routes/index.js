@@ -4,6 +4,7 @@ let router = express.Router();
 
 router.use("/", require("./home"));
 router.use("/login", require("./login"));
+router.use("/create", require("./create"));
 router.use("/user", require("./user"));
 router.use("/u", require("./user"));
 router.use("/settings", require("./settings"));
