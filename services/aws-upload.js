@@ -17,7 +17,7 @@ const fileFilter = (req, file, cb) => {
   } else {
     cb(new Error('Invalid file type, only JPEG and PNG is allowed!'), false);
   }
-}
+};
 
 const upload = multer({
   fileFilter,

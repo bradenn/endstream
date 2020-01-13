@@ -4,7 +4,7 @@ let User = require('../models/user');
 
 Utils.getRouteWithUser("/:user", router, (req, res, user, err) => {
     User.findOne({username: req.params.user}, (err, target) => {
-        res.render("user", {user: user, target: target});
+        return res.render("user", {user: user, target: target});
     });
 });
 
@@ -13,7 +13,7 @@ Utils.postRouteWithUser("/:user/manage/:setting", router, (req, res, user, err) 
         if (user.username === target.username || user.account_type >= 5) {
             target[req.params.setting] = req.body[req.params.setting];
             target.save((target) => {
-                res.redirect(req.get('referer') + "?updated=account");
+                return res.redirect(req.get('referer') + "?updated=account");
             });
         }
     });

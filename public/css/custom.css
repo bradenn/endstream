@@ -93,6 +93,7 @@ a.no-bs:hover {
 }
 
 .navbar-brand {
+    font-family: "IBM Plex Sans Light";
     padding-bottom: 0;
 }
 
@@ -178,6 +179,17 @@ a.no-bs:hover {
     border: none;
     box-shadow: var(--normal-shadow);
     border-radius: 0.25em;
+}
+
+/* Tables */
+
+.table th {
+    border: none;
+}
+
+
+.table td{
+    border: none;
 }
 
 /* Streaming Windows */
@@ -328,6 +340,12 @@ label {
     font-weight: 500;
 }
 
+.text-muted{
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: rgba(0,0,0,0.60) !important;
+}
+
 /* Cards */
 
 .img-md {
@@ -397,6 +415,10 @@ label {
     background-color: var(--card-bg);
     font-family: Roboto, sans-serif;
     font-weight: 500;
+}
+
+.card-header{
+    padding: .50rem .75rem;
 }
 
 .card-pill.pill-fluid {
